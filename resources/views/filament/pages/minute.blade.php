@@ -21,7 +21,7 @@
             </div>
             <div class="w-full p-6 mt-6 flex justify-between min-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                 <div>
-                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Zoom Link</h5>
+                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Teams Link</h5>
                     <span class="text-xs text-gray-500 dark:text-gray-400 text-wrap">{{$zoom_link}}</span>
                 </div>
                 <div>
