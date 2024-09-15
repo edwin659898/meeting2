@@ -21,8 +21,7 @@ class MeetingUser extends Pivot
 
         static::creating(function ($meetinguser) { // before creating() method call this
             abort_unless(
-                $meetinguser->meeting->members->where
-                (['member_role' => 'Chairing', 'user_id', auth()->id()])->isNotEmpty() ||
+                $meetinguser->meeting->members->where(['member_role' => 'Chairing', 'user_id', auth()->id()])->isNotEmpty() ||
                     auth()->user()->hasRole('DDC'),
                 403
             );

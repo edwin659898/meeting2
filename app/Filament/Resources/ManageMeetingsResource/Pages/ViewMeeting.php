@@ -14,7 +14,7 @@ class ViewMeeting extends ViewRecord
     protected function getActions(): array
     {
         return [
-            Actions\EditAction::make()->visible(fn (Meeting $record): bool => auth()->user()->isThisMeetingChairman($record->id) == 'true'                       
+            Actions\EditAction::make()->visible(fn (Meeting $record): bool => auth()->user()->isThisMeetingChairman($record->id) == 'true'                        
             || auth()->user()->hasRole('DDC')),
         ];
     }

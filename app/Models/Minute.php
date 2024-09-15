@@ -27,7 +27,7 @@ class Minute extends Model
 
     public function attendies(){
         return $this->hasMany(Attendance::class);
-    } 
+    }
 
     public function discussions(){
         return $this->hasMany(Discussion::class);

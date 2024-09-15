@@ -14,10 +14,10 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected function schedule(Schedule $schedule)
-    {
+    { 
         $schedule->command('update-date')->weekly()->sundays()->at('04:00'); 
         $schedule->command('meeting-reminder')->everyMinute(); 
-        $schedule->command('notify-published')->everyFiveMinutes(); 
+        $schedule->command('notify-published')->everyMinute(); 
         // $schedule->command('inspire')->hourly();
     }
 
