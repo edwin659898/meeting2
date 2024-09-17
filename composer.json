@@ -21,9 +21,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "mohamedsabil83/filament-forms-tinyeditor": "^1.6",
-        "saade/filament-fullcalendar": "^1.5",
-        "setasign/fpdf": "^1.8",
-        "setasign/fpdi": "^2.5",
+        "saade/filament-fullcalendar": "^1.9",
         "webbingbrasil/filament-advancedfilter": "^1.1"
     },
     "require-dev": {

@@ -18,18 +18,9 @@
         }
 
         @page {
-            margin-top: 0px;
-            margin-left: 0px;
+            margin-top: 0px;margin-left: 0px;
             size: a3;
             background-image: url('storage/images/logo.png');
-        }
-
-        @media print {
-
-            pre,
-            blockquote {
-                page-break-inside: avoid;
-            }
         }
     </style>
 </head>
@@ -195,7 +186,6 @@
         const button = document.getElementById('download-button');
         var opt = {
             margin: 0.1,
-            autoPaging: 'text',
             filename: 'myfile.pdf',
             image: {
                 type: 'jpeg',
@@ -212,7 +202,7 @@
         };
         var br = {
             pagebreak: {
-                mode: ['avoid-all', 'css', 'legacy'],
+                mode: 'avoid-all',
                 before: '#page2el'
             }
         };

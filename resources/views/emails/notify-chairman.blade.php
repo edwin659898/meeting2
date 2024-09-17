@@ -10,6 +10,7 @@
 
 	<div>
 		{!! '<p>'.$content.'</p>' !!}
+		<p><a href="https://meetings.betterglobeforestry.co.ke/view-minute/{{ $password }}" style="color:#0000FF">Click me to view it</a></p>
 		<small class="text-sm">
 			Thanks,<br>
 			Communications Team<br>

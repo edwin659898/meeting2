@@ -1,10 +1,3 @@
-
-![image](https://github.com/edwin659898/Meetings-App-/assets/62498603/ee9e14a1-ebea-4626-820f-1f3b784ed622)
-
-
-![image](https://github.com/edwin659898/Meetings-App-/assets/62498603/00f81950-2104-4e8f-87e3-4959a97ad006)
-
-
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
