@@ -85,6 +85,7 @@ class UserResource extends Resource
                         'Operations' => 'Operations',
                         'Quality Management' => 'Quality Management',
                         'Senior Management' => 'Senior Management',
+                        'Salaes & Marketing' => 'Salaes & Marketing',
                     ])
                     ->required(),
                 Select::make('department_two')
@@ -102,6 +103,7 @@ class UserResource extends Resource
                         'Monitoring & Evaluation' => 'Monitoring & Evaluation',
                         'Operations' => 'Operations',
                         'Quality Management' => 'Quality Management',
+                        'Salaes & Marketing' => 'Salaes & Marketing',
                         'Senior Management' => 'Senior Management',
                     ]),
                 Select::make('role.name')
