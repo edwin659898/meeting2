@@ -51,7 +51,7 @@ class ManageMeetingsResource extends Resource
                     ])->columns(3),
                 Card::make()
                     ->schema([
-                        Forms\Components\TextInput::make('zoom_link')->rules(['url']),
+                        Forms\Components\TextInput::make('zoom_link')->rules(['url'])->label('Teams Link'),
                         Forms\Components\TextInput::make('meeting_id'),
                         Forms\Components\TextInput::make('passcode'),
                     ])->columns(3),

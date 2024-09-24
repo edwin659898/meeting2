@@ -1,7 +1,7 @@
 <x-filament::page>
     <div class="border px-6 py-6 border-gray-300 shadow-sm bg-white rounded-xl filament-tables-container">
         <div class="flex justify-center font-bold mb-5">
-            <img src="{{ asset('storage/images/logo.png') }}" alt="Header" class="w-16">
+            <img src="{{ asset('storage/logo.png') }}" alt="Header" class="w-16">
         </div>
         <div class="py-4">
             Meeting Date: {{ date('Y-m-d') }}
