@@ -15,6 +15,7 @@ class Meeting extends Model
         'frequency',
         'zoom_link',
         'meeting_id',
+        'status',
         'passcode',
         'start_time',
         'end_time',
@@ -45,6 +46,19 @@ class Meeting extends Model
 
     public function minutes(){
         $this->hasMany(Minute::class);
+    }
+
+    public function status ($meeting_id){
+        $meeting = Meeting::find($meeting_id); 
+
+        if ($meeting){
+            if ($meeting->status){
+                $meeting->status = 0;
+
+            }else{
+                $meeting->status = 1;
+            }
+        }
     }
 
 }

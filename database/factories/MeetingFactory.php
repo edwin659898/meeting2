@@ -23,6 +23,7 @@ class MeetingFactory extends Factory
             'zoom_link' => 'https://us02web.zoom.us/j/83841372154?pwd=cmNNRXVDMTU5VmwxeWQ1TzI0emlHdz09',
             'meeting_id' => '83841372154',
             'passcode' => 'cmNNRXVDMTU5VmwxeWQ1TzI0emlHdz09',
+            'status' => fake()->randomElement([0,1]), 
             'start_time' => fake()->date(),
             'end_time' => fake()->date(),
         ];

@@ -16,12 +16,18 @@ use Filament\Tables\Filters\Layout;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\MultiSelect;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 
+use App\Models\User;
 class ManageMeetingsResource extends Resource
 {
     protected static ?string $model = Meeting::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+
+    protected static ?int $navigationSort = 1;
 
 
     public static function form(Form $form): Form
@@ -29,6 +35,14 @@ class ManageMeetingsResource extends Resource
         return $form
 
             ->schema([
+                Select::make('status')
+                    ->options([
+                        '1' => 'Active',
+                        '0' => 'Inactive',
+                        
+                    ]) 
+                    ->required(),
+
                 Card::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')->required()->label('Name of Meeting'),
@@ -62,6 +76,8 @@ class ManageMeetingsResource extends Resource
                             ->relationship('user', 'name')
                             ->searchable(),
                     ]),
+                    
+                    
 
 
             ]);
@@ -76,6 +92,10 @@ class ManageMeetingsResource extends Resource
                 Tables\Columns\TextColumn::make('location')->sortable()->Searchable(),
                 Tables\Columns\TextColumn::make('frequency')->sortable()->Searchable(),
                 Tables\Columns\TextColumn::make('start_time')->Searchable(),
+                Tables\Columns\TextColumn::make('status')->sortable()->Searchable(),
+            ])
+            ->filters([
+                Tables\Filters\TrashedFilter::make(),
             ])
             ->filters([
                 SelectFilter::make('location')
@@ -90,14 +110,36 @@ class ManageMeetingsResource extends Resource
                         'Quarterly' => 'Quarterly',
                         'Yearly' => 'Yearly',
                         'One-time meeting' => 'One-time meeting',
-                    ])
+                    ]),
+                    // SelectFilter::make('status')
+                    // ->options([
+                    //     '1' => 'Active',
+                    //     '0' => 'Inactive',
+                    // ])
+                    // ->required(),
+                    
             ])
             ->actions([
                 Tables\Actions\ViewAction::make()->color('success'),
                 Tables\Actions\EditAction::make()->visible(fn (Meeting $record): bool => auth()->user()->isThisMeetingChairman($record->id) == true
                     || auth()->user()->hasRole('DDC')),
+                    // ->label('Delete')
+                    // ->visible(fn (Meeting $record) => auth()->id() != $record->id),
+                    
+                Tables\Actions\RestoreAction::make()->visible(auth()->user()->hasRole('DDC'))->label('activate'),
+                Tables\Actions\DetachAction::make()->visible(auth()->user()->hasRole('DDC'))->label('diactivate'),
+
+                // Tables\Actions\RestoreAction::make()->label('activate'),
                 Tables\Actions\DeleteAction::make()->visible(auth()->user()->hasRole('DDC')),
             ]);
+            
+            // ->actions([
+            //     Tables\Actions\EditAction::make(),
+            //     Tables\Actions\DeleteAction::make()
+            //         ->label('inactive')
+            //         ->visible(fn (Meeting $record) => auth()->id() != $record->id),
+            //     Tables\Actions\RestoreAction::make()->label('activate'),
+            // ]);
     }
 
     public static function getRelations(): array
@@ -105,6 +147,20 @@ class ManageMeetingsResource extends Resource
         return [
             RelationManagers\UserRelationManager::class,
         ];
+    }
+
+    public function status ($meeting_id){
+        $meeting = Meeting::find($meeting_id); 
+
+        if ($meeting){
+            if ($meeting->status){
+                $meeting->status = 0;
+
+            }else{
+                $meeting->status = 1;
+            }
+            // user 
+        }
     }
 
 
@@ -128,5 +184,11 @@ class ManageMeetingsResource extends Resource
                     $query->where('user_id', auth()->id());
                 })->orderBy('created_at', 'Desc');
         }
+
+        return parent::getEloquentQuery()
+            ->withoutGlobalScopes([
+                SoftDeletingScope::class,
+            ])
+            ->orderBy('created_at','Desc');
     }
 }

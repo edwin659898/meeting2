@@ -113,6 +113,7 @@ class UserResource extends Resource
                     ->password()
                     ->required()
                     ->visibleOn('create'),
+
                 Select::make('status')
                     ->options([
                         '1' => 'Active',
@@ -132,6 +133,7 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('site')->sortable()->Searchable(),
                 Tables\Columns\TextColumn::make('department')->sortable()->Searchable(),
                 Tables\Columns\TextColumn::make('created_at')->Searchable(),
+                Tables\Columns\TextColumn::make('status')->sortable()->Searchable(),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
@@ -144,7 +146,7 @@ class UserResource extends Resource
                 Tables\Actions\RestoreAction::make()->label('activate'),
             ])
             ->bulkActions([
-                //Tables\Actions\DeleteBulkAction::make(),
+                // Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
