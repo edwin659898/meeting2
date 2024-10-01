@@ -123,11 +123,11 @@ class ManageMeetingsResource extends Resource
                 Tables\Actions\ViewAction::make()->color('success'),
                 Tables\Actions\EditAction::make()->visible(fn (Meeting $record): bool => auth()->user()->isThisMeetingChairman($record->id) == true
                     || auth()->user()->hasRole('DDC')),
-                    // ->label('Delete')
+                    // ->label('Delete'),
                     // ->visible(fn (Meeting $record) => auth()->id() != $record->id),
                     
-                Tables\Actions\RestoreAction::make()->visible(auth()->user()->hasRole('DDC'))->label('activate'),
-                Tables\Actions\DetachAction::make()->visible(auth()->user()->hasRole('DDC'))->label('diactivate'),
+                // Tables\Actions\RestoreAction::make()->visible(auth()->user()->hasRole('DDC'))->label('activate'),
+                // Tables\Actions\DetachAction::make()->visible(auth()->user()->hasRole('DDC'))->label('diactivate'),
 
                 // Tables\Actions\RestoreAction::make()->label('activate'),
                 Tables\Actions\DeleteAction::make()->visible(auth()->user()->hasRole('DDC')),

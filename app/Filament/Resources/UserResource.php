@@ -139,9 +139,10 @@ class UserResource extends Resource
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make()->color('success'),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                    ->label('inactivate')
+                    ->label('Delete')
                     ->visible(fn (User $record) => auth()->id() != $record->id),
                 Tables\Actions\RestoreAction::make()->label('activate'),
             ])
