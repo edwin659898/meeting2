@@ -126,8 +126,8 @@ class ManageMeetingsResource extends Resource
                     // ->label('Delete'),
                     // ->visible(fn (Meeting $record) => auth()->id() != $record->id),
                     
-                // Tables\Actions\RestoreAction::make()->visible(auth()->user()->hasRole('DDC'))->label('activate'),
-                // Tables\Actions\DetachAction::make()->visible(auth()->user()->hasRole('DDC'))->label('diactivate'),
+                // Tables\Actions\RestoreAction::make()->visible(auth()->user()->hasRole('DDC'))->label('Activate '),
+                // Tables\Actions\DetachAction::make()->visible(auth()->user()->hasRole('DDC'))->label('Deactivate'),
 
                 // Tables\Actions\RestoreAction::make()->label('activate'),
                 Tables\Actions\DeleteAction::make()->visible(auth()->user()->hasRole('DDC')),
