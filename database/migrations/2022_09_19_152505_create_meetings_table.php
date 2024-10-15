@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('frequency');
             $table->string('zoom_link')->nullable();
             $table->string('meeting_id')->nullable();
-            $table->string('passcode')->nullable();
             $table->string('status')->default('1');
+            $table->string('passcode')->nullable();
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
             $table->timestamps();

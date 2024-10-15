@@ -217,6 +217,7 @@
                         <option value="Finance & Accounts">Finance & Accounts</option>
                         <option value="Miti Magazine">Miti Magazine</option>
                         <option value="Top Management">Top Management</option>
+                        <option value="sales & Marketing">Sales & Marketing</option>
                     </select>
                     @error('department') <span class="text-xs text-red-500">{{ $message }}</span> @enderror
                 </div>

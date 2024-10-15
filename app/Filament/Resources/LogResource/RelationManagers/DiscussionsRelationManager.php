@@ -40,8 +40,8 @@ class DiscussionsRelationManager extends RelationManager
                                 'Monitoring & Evaluation' => 'Monitoring & Evaluation',
                                 'Operations' => 'Operations',
                                 'Quality Management' => 'Quality Management',
+                                'Sales & Marketing' => 'Sales & Marketing',
                                 'Senior Management' => 'Senior Management',
-                                'Sales & Marketing ' => 'Sales & Marketing',
                             ]),
                     ]),
                 Card::make()

@@ -83,9 +83,9 @@ class UserResource extends Resource
                         'Miti Magazine' => 'Miti Magazine',
                         'Monitoring & Evaluation' => 'Monitoring & Evaluation',
                         'Operations' => 'Operations',
-                        'Quality Management' => 'Quality Management',
+                        'Quality Management' => 'Quality Management',                        
+                        'Sales & Marketing' => 'Sales & Marketing',
                         'Senior Management' => 'Senior Management',
-                        'Salaes & Marketing' => 'Salaes & Marketing',
                     ])
                     ->required(),
                 Select::make('department_two')
@@ -102,8 +102,8 @@ class UserResource extends Resource
                         'Miti Magazine' => 'Miti Magazine',
                         'Monitoring & Evaluation' => 'Monitoring & Evaluation',
                         'Operations' => 'Operations',
-                        'Quality Management' => 'Quality Management',
-                        'Salaes & Marketing' => 'Salaes & Marketing',
+                        'Quality Management' => 'Quality Management',                        
+                        'Sales & Marketing' => 'Sales & Marketing',
                         'Senior Management' => 'Senior Management',
                     ]),
                 Select::make('role.name')
@@ -113,7 +113,6 @@ class UserResource extends Resource
                     ->password()
                     ->required()
                     ->visibleOn('create'),
-
                 Select::make('status')
                     ->options([
                         '1' => 'Active',
@@ -147,7 +146,7 @@ class UserResource extends Resource
                 Tables\Actions\RestoreAction::make()->label('activate'),
             ])
             ->bulkActions([
-                // Tables\Actions\DeleteBulkAction::make(),
+                //Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
