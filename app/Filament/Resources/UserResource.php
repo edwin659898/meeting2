@@ -86,6 +86,7 @@ class UserResource extends Resource
                         'Quality Management' => 'Quality Management',                        
                         'Sales & Marketing' => 'Sales & Marketing',
                         'Senior Management' => 'Senior Management',
+                        'BGF Foundation' => 'BGF Foundation',
                     ])
                     ->required(),
                 Select::make('department_two')
@@ -105,6 +106,7 @@ class UserResource extends Resource
                         'Quality Management' => 'Quality Management',                        
                         'Sales & Marketing' => 'Sales & Marketing',
                         'Senior Management' => 'Senior Management',
+                        'BGF Foundation' => 'BGF Foundation',
                     ]),
                 Select::make('role.name')
                     ->relationship('roles', 'name')->label('Has Roles')
