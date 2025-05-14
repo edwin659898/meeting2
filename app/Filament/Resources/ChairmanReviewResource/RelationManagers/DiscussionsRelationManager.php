@@ -41,6 +41,7 @@ class DiscussionsRelationManager extends RelationManager
                             'Operations' => 'Operations',
                             'Quality Management' => 'Quality Management',
                             'Senior Management' => 'Senior Management',
+                            'Sales & Marketing' => 'Sales & Marketing',
                             'BGF Foundation' => 'BGF Foundation',
                         ]),
                 ]),

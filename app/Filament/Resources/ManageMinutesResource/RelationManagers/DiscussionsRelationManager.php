@@ -48,6 +48,7 @@ class DiscussionsRelationManager extends RelationManager
                                 'Quality Management' => 'Quality Management',
                                 'Sales & Marketing' => 'Sales & Marketing',
                                 'Senior Management' => 'Senior Management',
+                                'BGF Foundation' => 'BGF Foundation',
                             ]),
                     ]),
                 Card::make()
